@@ -1,0 +1,22 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Post Archive' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}{{ content | safe }}{% endset %}
+
+{# Post list content #}
+{% set postListItems = collections.posts %}
+
+{% block head %}
+    <style>{% include "css/components/intro.css" %} </style>
+    <style>{% include "css/components/post-list.css" %} </style>
+    <style>{% include "css/archive-page.css" %} </style>
+{% endblock %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    {% include "partials/components/post-list.njk" %}
+  </main>
+{% endblock %}

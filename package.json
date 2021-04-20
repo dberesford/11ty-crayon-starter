@@ -1,0 +1,48 @@
+{
+  "name": "11ty-crayon-starter",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Started blog/website for an 11ty project",
+  "main": "index.js",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@tbranyen/jsdom": "^13.0.0",
+    "concurrently": "^6.0.2",
+    "html-minifier": "^4.0.0",
+    "semver": "^7.3.5",
+    "slugify": "^1.5.0"
+  },
+  "devDependencies": {
+    "bl": "^5.0.0",
+    "chokidar-cli": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "make-dir-cli": "^2.0.0",
+    "prettier": "^2.2.1",
+    "sharp": "^0.28.1",
+    "sharp-cli": "^1.15.0",
+    "stylelint": "13.12.0",
+    "stylelint-config-standard": "21.0.0"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run serve\" \"npm run watch-css\" ",
+    "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
+    "production": "npx eleventy",
+    "process-intro-image": "node ./src/image-processing-tools/create-intro-image.js",
+    "process-image": "node ./src/image-processing-tools/optimise-image.js",
+    "css-lint": "stylelint ./src/_includes/css/**/*",
+    "watch-css": "chokidar \"./src/_includes/css/**/*\" -c \"npm run css-lint\""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

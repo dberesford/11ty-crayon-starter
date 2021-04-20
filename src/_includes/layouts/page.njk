@@ -1,0 +1,23 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Page' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+
+{% block head %}
+  <style> {% include "css/components/intro.css" %} </style>
+  <style> {% include "css/post-page.css" %} </style>
+{% endblock %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    <article class="post">
+      {% include "partials/components/intro.njk" %}
+      <main class="post">
+        {{ content | safe }}
+      </main>
+    </article>
+  </main>
+{% endblock %}
+
+{{ content | safe }}

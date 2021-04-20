@@ -1,0 +1,7 @@
+*.log
+npm-debug.*
+*.swp
+.DS_Store
+node_modules
+dist 
+*.report.html

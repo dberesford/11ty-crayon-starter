@@ -1,0 +1,13 @@
+{
+  "name": "The Crayon Club",
+  "shortDesc": "",
+  "url": "https://example.com",
+  "contact": "info@example.com",
+  "twitterUrl": "www.twitter.com/example",
+  "twitterHandle": "@example",
+  "authorEmail": "info@example.com",
+  "authorHandle": "@example",
+  "authorName": "Chairman",
+  "maxPostsPerPage": 5,
+  "copyright": "Copyright © 2021 Example.com. All Rights Reserved"
+}

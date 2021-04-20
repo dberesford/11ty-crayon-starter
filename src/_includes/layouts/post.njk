@@ -1,0 +1,51 @@
+{% extends 'layouts/base.njk' %}
+{% set pageType = 'Post' %}
+
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}
+<p class="intro_meta">
+  {% if date %}
+    <time datetime="{{ date | w3DateFilter }}" class="dt-published">{{ date | dateFilter }}</time>
+  {% endif %}
+  <span>— {{ helpers.getReadingTime(content) }} minute read</span>
+</p>
+{% endset %}
+
+{% block head %}
+    <style>{% include "css/components/intro.css" %}</style>
+    <style>{% include "css/post-page.css" %}</style>
+    <meta name="Description" content="{{seoDescription | safe}}">
+{% endblock %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    <article class="post">
+     {% include "partials/components/intro.njk" %}
+        <main class="post_body">
+            <picture>
+                <source srcset="{{introImage + "-intro-image.webp"}}" type="image/webp">
+                <source srcset="{{introImage + "-intro-image.jpg"}}" type="image/jpeg">
+                <img class="post_intro_image" alt="{{introImage}}" src="{{introImage + "-intro-image.jpg"}}">
+            </picture>
+            {{ content | safe }}
+        </main>
+        {% if tags %}
+            <footer class="post_footer">
+                <div class="footer-nav">
+                    <p class="">Tags:</p>
+                    <ul class="nav_list">
+                        {% for item in tags %}
+                            <li class="nav_item">
+                                <a href="/tags/{{ item }}">{{ item }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </footer>
+        {% endif %}
+    </article>
+  </main>
+{% endblock %}
+
+{{ content | safe }}

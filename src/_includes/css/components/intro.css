@@ -1,0 +1,12 @@
+.intro {
+  margin-bottom: 1em;
+}
+
+.intro_summary {
+  font-size: smaller;
+}
+
+.intro_heading {
+  font-size: 2em;
+  color: var(--color-primary);
+}

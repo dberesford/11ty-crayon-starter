@@ -1,0 +1,25 @@
+<section class="post-list">
+      <h2 class="post-list-heading">{{ postListHeading }}</h2>
+      <ol class="post-list-items" reversed>
+        {% for item in postListItems %}
+          {% if item.date.getTime() <= global.now %}
+            <br>
+            <li class="">
+              <h3 class="post-list-item">
+                <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
+              </h3>
+              <p class="">
+                  <time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+              </p>
+              <img class="thumbnail" alt="Intro thumbnail" src="{{ item.url + item.data.introImage + "-thumbnail.jpg" }}"/>
+              <div class="post-list-excerpt">
+                  {{ item.data.page.excerpt | markdownFilter | safe}}
+              </div>
+              <a href="{{ item.url }}" rel="bookmark">Continue reading..</a>
+            </li>
+            <br>
+          {% endif %}
+        {% endfor %}
+      </ol>
+</section>
+

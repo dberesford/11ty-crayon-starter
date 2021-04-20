@@ -1,0 +1,19 @@
+.post-list {
+  margin-bottom: 1em;
+}
+
+.post-list-heading {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.post-list-items {
+  list-style: none;
+}
+
+.thumbnail {
+  width: 150px;
+  height: 150px;
+  float: left;
+  padding-right: 1em;
+}

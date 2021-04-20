@@ -1,0 +1,12 @@
+<header role="banner" class="site-head">
+    <div class="header-box">
+        <a href="/" aria-label="home" class="header-text"{{ 'aria-current=page' if page.url == '/' | safe }}>
+        <span aria-hidden="true">{{ site.name }}</span>
+      </a>
+      <span class="header-text" aria-hidden="true">{{ site.shortDesc }}</span>
+      <div class="header-nav">
+          <div class="header-nav-item"><a class="header-text" href="/">Home</a></div>
+          <div class="header-nav-item"><a class="header-text" href="/pages/about">About</a></div>
+      </div>
+    </div>
+</header>
