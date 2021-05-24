@@ -1,6 +1,6 @@
 # 11ty Crayon Starter
 
-A starter [Eleventy](https://www.11ty.dev/) blog/website ptoject.
+A starter [Eleventy](https://www.11ty.dev/) blog/website project.
 
 ## Usage
 
